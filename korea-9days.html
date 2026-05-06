@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇰🇷 韩国9日全景游攻略 | 2026年秋季 · 首尔+釜山+济州岛</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --korea-red: #C60C30;
+            --korea-blue: #003D80;
+            --korea-white: #FFFFFF;
+            --korea-yellow: #F5C518;
+            --gradient-start: #C60C30;
+            --gradient-end: #8B0000;
+            --card-bg: #FFFFFF;
+            --text-primary: #1A1A2E;
+            --text-secondary: #5A5A7A;
+            --bg-color: #F8F9FA;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-hover: 0 8px 30px rgba(0,0,0,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--korea-red) 0%, var(--gradient-end) 100%);
+            color: white;
+            padding: 60px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '🇰🇷';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .header::after {
+            content: '🇰🇷';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .header .tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Quick Stats */
+        .quick-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: -40px auto 30px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--korea-red);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Section */
+        .section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #F0F0F5;
+        }
+
+        .section-icon {
+            font-size: 1.8rem;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* Route Map */
+        .route-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 20px 0;
+        }
+
+        .city-card {
+            background: linear-gradient(135deg, var(--korea-red), var(--korea-blue));
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .city-card .emoji {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+
+        .city-card .days {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Day Card */
+        .day-card {
+            border: 1px solid #E8E8F0;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .day-card:hover {
+            border-color: var(--korea-red);
+            box-shadow: 0 0 0 3px rgba(198,12,48,0.1);
+        }
+
+        .day-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .day-number {
+            background: linear-gradient(135deg, var(--korea-red), var(--gradient-end));
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .day-info h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .day-info .location {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .day-content {
+            display: grid;
+            gap: 12px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px;
+            background: #F8F9FA;
+            border-radius: 10px;
+        }
+
+        .highlight-item .emoji {
+            flex-shrink: 0;
+        }
+
+        .highlight-item .text {
+            flex: 1;
+        }
+
+        .highlight-item .title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .highlight-item .desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Tips Box */
+        .tips-box {
+            background: linear-gradient(135deg, #FFF8E7, #FFF3D6);
+            border-left: 4px solid var(--korea-yellow);
+            border-radius: 0 12px 12px 0;
+            padding: 15px 20px;
+            margin-top: 15px;
+        }
+
+        .tips-box .title {
+            font-weight: 600;
+            color: #996600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tips-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tips-box li {
+            padding: 5px 0;
+            font-size: 0.9rem;
+            color: #664400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tips-box li::before {
+            content: '💡';
+        }
+
+        /* Transport Cards */
+        .transport-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .transport-card {
+            background: linear-gradient(135deg, #E8F4FD, #D4EDFC);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .transport-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .transport-card h4 {
+            color: var(--korea-blue);
+            margin-bottom: 5px;
+        }
+
+        .transport-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Food Grid */
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 12px;
+        }
+
+        .food-item {
+            background: #FFF5F5;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #FFE5E5;
+            transition: transform 0.2s;
+        }
+
+        .food-item:hover {
+            transform: scale(1.05);
+        }
+
+        .food-item .emoji {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+
+        .food-item .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .food-item .location {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 3px;
+        }
+
+        /* Budget Table */
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .budget-table th,
+        .budget-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #E8E8F0;
+        }
+
+        .budget-table th {
+            background: #F8F9FA;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .budget-table tr:hover {
+            background: #FAFAFA;
+        }
+
+        .budget-table .amount {
+            font-weight: 600;
+            color: var(--korea-red);
+        }
+
+        .budget-table .total-row {
+            background: linear-gradient(135deg, #FFF5F5, #FFE5E5);
+            font-weight: 700;
+        }
+
+        /* Checklist */
+        .checklist {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+        }
+
+        .checklist-category {
+            background: #F8F9FA;
+            border-radius: 12px;
+            padding: 15px;
+        }
+
+        .checklist-category h4 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .checklist-category ul {
+            list-style: none;
+        }
+
+        .checklist-category li {
+            padding: 6px 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist-category li::before {
+            content: '☐';
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .footer .made-with {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .quick-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .route-flow {
+                flex-direction: column;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #F1F1F1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--korea-red);
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <h1>🇰🇷 韩国9日全景游攻略</h1>
+        <p class="subtitle">首尔 · 釜山 · 济州岛 | 2026年秋季</p>
+        <div class="tags">
+            <span class="tag">🗓️ 9天8晚</span>
+            <span class="tag">🍂 最佳季节</span>
+            <span class="tag">✨ 经典+小众</span>
+            <span class="tag">💰 预算参考</span>
+        </div>
+    </header>
+
+    <!-- Quick Stats -->
+    <div class="quick-stats">
+        <div class="stat-card">
+            <div class="stat-icon">🏙️</div>
+            <div class="stat-value">3城</div>
+            <div class="stat-label">目的地</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">✈️</div>
+            <div class="stat-value">2程</div>
+            <div class="stat-label">内陆航班</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-value">25+</div>
+            <div class="stat-label">打卡景点</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🍽️</div>
+            <div class="stat-value">15+</div>
+            <div class="stat-label">必吃美食</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">💵</div>
+            <div class="stat-value">8K+</div>
+            <div class="stat-label">人均预算(¥)</div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- 行程总览 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🗺️</span>
+                <h2 class="section-title">行程总览</h2>
+            </div>
+            
+            <div class="route-flow">
+                <div class="city-card">
+                    <div class="emoji">🏙️</div>
+                    <div class="name">首尔</div>
+                    <div class="days">Day 1-4</div>
+                </div>
+                <span class="arrow">→</span>
+                <div class="city-card" style="background: linear-gradient(135deg, #1E90FF, #0066CC);">
+                    <div class="emoji">🌊</div>
+                    <div class="name">釜山</div>
+                    <div class="days">Day 5-7</div>
+                </div>
+                <span class="arrow">→</span>
+                <div class="city-card" style="background: linear-gradient(135deg, #20B2AA, #008B8B);">
+                    <div class="emoji">🌋</div>
+                    <div class="name">济州岛</div>
+                    <div class="days">Day 8-9</div>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <div class="title">
+                    <span>📌 路线亮点</span>
+                </div>
+                <ul>
+                    <li>首尔4天：深度体验韩流文化、购物、美食</li>
+                    <li>釜山3天：海港风情、甘川壁画村、札嘎其市场</li>
+                    <li>济州岛2天：火山地貌、汉拿山风光、韩剧取景地</li>
+                    <li>秋季枫叶季：首尔南山、釜山洛东江畔绝美秋色</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 交通攻略 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🚄</span>
+                <h2 class="section-title">交通攻略</h2>
+            </div>
+
+            <div class="transport-grid">
+                <div class="transport-card">
+                    <div class="icon">✈️</div>
+                    <h4>国际航班</h4>
+                    <p>北京/上海 → 首尔仁川<br>T-money卡提前购买</p>
+                </div>
+                <div class="transport-card">
+                    <div class="icon">🚄</div>
+                    <h4>首尔 ↔ 釜山</h4>
+                    <p>KTX高铁 约2.5小时<br>提前订票有优惠</p>
+                </div>
+                <div class="transport-card">
+                    <div class="icon">✈️</div>
+                    <h4>釜山 → 济州岛</h4>
+                    <p>内陆航班 约1小时<br>或乘渡轮 3.5小时</p>
+                </div>
+                <div class="transport-card">
+                    <div class="icon">🚌</div>
+                    <h4>城市内交通</h4>
+                    <p>T-money交通卡通用<br>便利店可充值</p>
+                </div>
+            </div>
+
+            <div class="tips-box">
+                <div class="title">
+                    <span>💡 交通TIPS</span>
+                </div>
+                <ul>
+                    <li>首尔机场铁路AREX直达市区，45分钟</li>
+                    <li>釜山地铁1-4号线覆盖主要景点</li>
+                    <li>济州岛建议包车或租车自驾</li>
+                    <li>T-money卡可在7-11/CU便利店购买并充值</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Day 1-2 首尔 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🏙️</span>
+                <h2 class="section-title">Day 1-4 首尔篇</h2>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D1</div>
+                    <div class="day-info">
+                        <h3>抵达首尔</h3>
+                        <span class="location">明洞 · 首尔塔 · 明洞夜市</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">✈️</span>
+                        <div class="text">
+                            <div class="title">仁川机场 → 明洞酒店</div>
+                            <div class="desc">AREX机场快线直达首尔站，转乘4号线明洞站</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🗼</span>
+                        <div class="text">
+                            <div class="title">N首尔塔（南山塔）</div>
+                            <div class="desc">傍晚登塔看日落+夜景，《来自星星的你》取景地</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🍜</span>
+                        <div class="text">
+                            <div class="title">明洞美食街</div>
+                            <div class="desc">血肠汤饭、韩牛烤肉、人参鸡汤</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D2</div>
+                    <div class="day-info">
+                        <h3>历史文化之旅</h3>
+                        <span class="location">景福宫 · 北村韩屋 · 三清洞</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🏯</span>
+                        <div class="text">
+                            <div class="title">景福宫</div>
+                            <div class="desc">韩国最大宫殿，看卫兵换岗仪式（10:00/14:00），建议穿韩服免费入场</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🎭</span>
+                        <div class="text">
+                            <div class="title">北村韩屋村</div>
+                            <div class="desc">600年历史传统村落，《孤单又灿烂的神》取景地</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">☕</span>
+                        <div class="text">
+                            <div class="title">三清洞 & 仁寺洞</div>
+                            <div class="desc">文艺小店、传统茶屋、韩定食餐厅</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips-box">
+                    <div class="title">📍 今日贴士</div>
+                    <ul>
+                        <li>景福宫闭馆日周二，建议平日游览</li>
+                        <li>韩服体验推荐Onion、Hanbok Dan等店</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D3</div>
+                    <div class="day-info">
+                        <h3>购物狂欢日</h3>
+                        <span class="location">弘大 · 延南洞 · 汝矣岛</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🎨</span>
+                        <div class="text">
+                            <div class="title">弘大商圈</div>
+                            <div class="desc">街头表演、潮牌店、网红咖啡厅，周五周六夜市超热闹</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🌸</span>
+                        <div class="text">
+                            <div class="title">延南洞</div>
+                            <div class="desc">文青圣地，独立咖啡馆、 Vintage店铺密集区</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🌾</span>
+                        <div class="text">
+                            <div class="title">汝矣岛国会大厦</div>
+                            <div class="desc">秋季汉江公园枫叶绝美，KBS电视台打卡</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D4</div>
+                    <div class="day-info">
+                        <h3>近郊探险</h3>
+                        <span class="location">南怡岛 · 小法兰西 · 春川</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🍂</span>
+                        <div class="text">
+                            <div class="title">南怡岛</div>
+                            <div class="desc">《冬季恋歌》取景地，秋季水杉大道金黄一片</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🏘️</span>
+                        <div class="text">
+                            <div class="title">小法兰西村</div>
+                            <div class="desc">《来自星星的你》拍摄地，彩色童话小屋</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🍜</span>
+                        <div class="text">
+                            <div class="title">春川明洞 & 辣炒鸡排</div>
+                            <div class="desc">春川名物辣炒鸡排配荞麦面</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips-box">
+                    <div class="title">📍 今日贴士</div>
+                    <ul>
+                        <li>建议报一日游团或包车，含往返交通</li>
+                        <li>南怡岛船票+小法兰西联票更优惠</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 5-7 釜山 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🌊</span>
+                <h2 class="section-title">Day 5-7 釜山篇</h2>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D5</div>
+                    <div class="day-info">
+                        <h3>釜山初印象</h3>
+                        <span class="location">甘川文化村 · 札嘎其市场 · BIFF广场</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🎨</span>
+                        <div class="text">
+                            <div class="title">甘川文化村</div>
+                            <div class="desc">彩色壁画阶梯、小王子雕塑、天空展望台</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🐟</span>
+                        <div class="text">
+                            <div class="title">札嘎其市场</div>
+                            <div class="desc">韩国最大水产市场，必吃活章鱼、生鱼片、海鲜锅</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🎬</span>
+                        <div class="text">
+                            <div class="title">BIFF广场</div>
+                            <div class="desc">釜山国际电影节广场，手印星光大道</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D6</div>
+                    <div class="day-info">
+                        <h3>海岸线漫游</h3>
+                        <span class="location">海云台 · 广安里 · Marine City</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🏖️</span>
+                        <div class="text">
+                            <div class="title">海云台海水浴场</div>
+                            <div class="desc">釜山最著名海滩，秋日海边漫步别有风情</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🌉</span>
+                        <div class="text">
+                            <div class="title">广安大桥夜景</div>
+                            <div class="desc">Mipo海滩看日落，渔村feel，满满治愈感</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🍲</span>
+                        <div class="text">
+                            <div class="title">猪肉汤饭 & 密阳血肠</div>
+                            <div class="desc">釜山特色美食，物美价廉</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D7</div>
+                    <div class="day-info">
+                        <h3>釜山深度游</h3>
+                        <span class="location">太宗台 · 松岛 · 影岛</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🌲</span>
+                        <div class="text">
+                            <div class="title">太宗台</div>
+                            <div class="desc">茂密的樱花🌸和枫叶林，展望台看蔚蓝海岸</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🚠</span>
+                        <div class="text">
+                            <div class="title">松岛海上缆车</div>
+                            <div class="desc">全新网红项目，俯瞰海岸线超震撼</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🏛️</span>
+                        <div class="text">
+                            <div class="title">釜山博物馆 & 龙头山公园</div>
+                            <div class="desc">了解釜山历史文化，登高看夜景</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips-box">
+                    <div class="title">📍 今日贴士</div>
+                    <ul>
+                        <li>太宗台需提前预约观光列车</li>
+                        <li>松岛缆车建议傍晚乘坐，看日落+夜景</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Day 8-9 济州岛 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🌋</span>
+                <h2 class="section-title">Day 8-9 济州岛篇</h2>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D8</div>
+                    <div class="day-info">
+                        <h3>火山岛奇遇</h3>
+                        <span class="location">城山日出峰 · 涉地可支 · 城邑民俗村</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🌅</span>
+                        <div class="text">
+                            <div class="title">城山日出峰</div>
+                            <div class="desc">联合国世界自然遗产，UNESCO认证火山地貌，必爬！</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🏝️</span>
+                        <div class="text">
+                            <div class="title">涉地可支</div>
+                            <div class="desc">《洛奇》取景地，悬崖灯塔+蔚蓝大海</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🏘️</span>
+                        <div class="text">
+                            <div class="title">城邑民俗村</div>
+                            <div class="desc">《D.P.》取景地，400年历史传统村落</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="day-card">
+                <div class="day-header">
+                    <div class="day-number">D9</div>
+                    <div class="day-info">
+                        <h3>济州环岛</h3>
+                        <span class="location">汉拿山 · 柱状节理带 · 中文海滩</span>
+                    </div>
+                </div>
+                <div class="day-content">
+                    <div class="highlight-item">
+                        <span class="emoji">🏔️</span>
+                        <div class="text">
+                            <div class="title">汉拿山国立公园</div>
+                            <div class="desc">韩国最高峰（1950m），秋季枫叶绝美，体力好可登顶</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">🌋</span>
+                        <div class="text">
+                            <div class="title">柱状节理带</div>
+                            <div class="desc">火山爆发形成的六角形石柱，大自然鬼斧神工</div>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="emoji">✈️</span>
+                        <div class="text">
+                            <div class="title">返程</div>
+                            <div class="desc">济州机场 → 首尔仁川 → 回国</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tips-box">
+                    <div class="title">📍 今日贴士</div>
+                    <ul>
+                        <li>济州岛景点分散，建议包车或自驾</li>
+                        <li>汉拿山登山需提前查看天气和路线</li>
+                        <li>预留充足时间前往机场</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 美食地图 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">🍜</span>
+                <h2 class="section-title">必吃美食地图</h2>
+            </div>
+
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="emoji">🥘</div>
+                    <div class="name">韩定食</div>
+                    <div class="location">首尔·仁寺洞</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🍖</div>
+                    <div class="name">韩牛烤肉</div>
+                    <div class="location">首尔·明洞</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🍗</div>
+                    <div class="name">酱油蟹</div>
+                    <div class="location">首尔·望远</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🧁</div>
+                    <div class="name">延南洞彩虹蛋糕</div>
+                    <div class="location">首尔·弘大</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🐙</div>
+                    <div class="name">活章鱼</div>
+                    <div class="location">釜山·札嘎其</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🍲</div>
+                    <div class="name">猪肉汤饭</div>
+                    <div class="location">釜山·西面</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🫕</div>
+                    <div class="name">海鲜锅</div>
+                    <div class="location">釜山·海云台</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🍊</div>
+                    <div class="name">济州橘子</div>
+                    <div class="location">济州岛</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🐷</div>
+                    <div class="name">黑猪肉烤肉</div>
+                    <div class="location">济州岛·涯月</div>
+                </div>
+                <div class="food-item">
+                    <div class="emoji">🍜</div>
+                    <div class="name">辣炒鸡排</div>
+                    <div class="location">春川·明洞</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 预算清单 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">💰</span>
+                <h2 class="section-title">预算清单（单人）</h2>
+            </div>
+
+            <table class="budget-table">
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>明细</th>
+                        <th>金额(¥)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>✈️ 国际机票</td>
+                        <td>往返含税</td>
+                        <td class="amount">2,500</td>
+                    </tr>
+                    <tr>
+                        <td>🏨 住宿</td>
+                        <td>8晚（3星-4星）</td>
+                        <td class="amount">3,200</td>
+                    </tr>
+                    <tr>
+                        <td>🚄 内陆交通</td>
+                        <td>KTX+内陆机票+地铁</td>
+                        <td class="amount">800</td>
+                    </tr>
+                    <tr>
+                        <td>🎫 景点门票</td>
+                        <td>首尔塔+南怡岛+太宗台等</td>
+                        <td class="amount">500</td>
+                    </tr>
+                    <tr>
+                        <td>🍽️ 餐饮</td>
+                        <td>9天（平均¥150/天）</td>
+                        <td class="amount">1,350</td>
+                    </tr>
+                    <tr>
+                        <td>🛒 购物</td>
+                        <td>护肤品+零食+纪念品</td>
+                        <td class="amount">1,500</td>
+                    </tr>
+                    <tr>
+                        <td>📱 电话卡/WiFi</td>
+                        <td>9天流量卡</td>
+                        <td class="amount">150</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="total-row">总计</td>
+                        <td class="amount total-row">10,000</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="tips-box">
+                <div class="title">
+                    <span>💡 省钱TIPS</span>
+                </div>
+                <ul>
+                    <li>提前3个月订机票，节假日至少提前6个月</li>
+                    <li>KTX早鸟票7折起，关注Korail官网</li>
+                    <li>明洞兑换所汇率比机场好</li>
+                    <li>购物满3万韩元可退税，记得保留小票</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 必备清单 -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">📝</span>
+                <h2 class="section-title">出行Checklist</h2>
+            </div>
+
+            <div class="checklist">
+                <div class="checklist-category">
+                    <h4>🛂 证件类</h4>
+                    <ul>
+                        <li>护照（有效期6个月以上）</li>
+                        <li>签证（免签团体游客/单次签证）</li>
+                        <li>机票行程单（建议打印）</li>
+                        <li>酒店确认单</li>
+                        <li>旅行保险单</li>
+                    </ul>
+                </div>
+                <div class="checklist-category">
+                    <h4>💳 支付类</h4>
+                    <ul>
+                        <li>Visa/Mastercard信用卡</li>
+                        <li>T-money交通卡（便利店购买）</li>
+                        <li>韩元现金（50-100万韩币）</li>
+                        <li>支付宝/微信（部分店可用）</li>
+                    </ul>
+                </div>
+                <div class="checklist-category">
+                    <h4>📱 数码类</h4>
+                    <ul>
+                        <li>手机+充电器</li>
+                        <li>转换插头（德标/韩标）</li>
+                        <li>移动WiFi或电话卡</li>
+                        <li>充电宝（2万毫安以下）</li>
+                        <li>相机/GoPro（可选）</li>
+                    </ul>
+                </div>
+                <div class="checklist-category">
+                    <h4>🧴 日用类</h4>
+                    <ul>
+                        <li>洗漱用品</li>
+                        <li>防晒霜SPF50+</li>
+                        <li>墨镜+遮阳帽</li>
+                        <li>雨伞/雨衣</li>
+                        <li>舒适的徒步鞋</li>
+                        <li>韩服/休闲装</li>
+                    </ul>
+                </div>
+                <div class="checklist-category">
+                    <h4>💊 健康类</h4>
+                    <ul>
+                        <li>常备药品（感冒药/止泻药）</li>
+                        <li>创可贴</li>
+                        <li>润喉糖</li>
+                        <li>消食片（韩餐较辣）</li>
+                    </ul>
+                </div>
+                <div class="checklist-category">
+                    <h4>📦 App & 预约</h4>
+                    <ul>
+                        <li>Naver Map（导航）</li>
+                        <li>Kakao T（打车）</li>
+                        <li>大众点评（找美食）</li>
+                        <li>KTX早鸟票预约</li>
+                        <li>景点门票预约</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 实用App -->
+        <section class="section">
+            <div class="section-header">
+                <span class="section-icon">📲</span>
+                <h2 class="section-title">实用App推荐</h2>
+            </div>
+
+            <div class="transport-grid">
+                <div class="transport-card" style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9);">
+                    <div class="icon">🗺️</div>
+                    <h4>Naver Map</h4>
+                    <p>韩国版高德，比Google准<br>韩文地址可直接导航</p>
+                </div>
+                <div class="transport-card" style="background: linear-gradient(135deg, #FFF3E0, #FFE0B2);">
+                    <div class="icon">🚕</div>
+                    <h4>Kakao T</h4>
+                    <p>韩国滴滴打车<br>可现金支付</p>
+                </div>
+                <div class="transport-card" style="background: linear-gradient(135deg, #FCE4EC, #F8BBD9);">
+                    <div class="icon">🍜</div>
+                    <h4>大众点评</h4>
+                    <p>找附近美食<br>中文菜单翻译</p>
+                </div>
+                <div class="transport-card" style="background: linear-gradient(135deg, #E3F2FD, #BBDEFB);">
+                    <div class="icon">🎫</div>
+                    <h4>飞猪/携程</h4>
+                    <p>机票酒店门票<br>一站式预订</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="made-with">
+            <span>Made with</span>
+            <span>❤️</span>
+            <span>&</span>
+            <span>🇰🇷</span>
+        </div>
+        <p style="margin-top: 10px;">🇨🇳 祝你韩国之旅玩得开心！旅途愉快！✈️</p>
+        <p style="margin-top: 10px; font-size: 0.8rem; color: #999;">
+            攻略更新时间：2026年5月 | 仅供参考，以实际情况为准
+        </p>
+    </footer>
+
+</body>
+</html>

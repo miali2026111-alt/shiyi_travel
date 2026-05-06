@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🌏 新马泰9日游完全攻略（2026国庆版）</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            padding: 0;
+            margin: 0;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 420px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+        }
+        
+        /* 封面 */
+        .cover-section {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            overflow: hidden;
+        }
+        
+        .cover-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .cover-flags {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .cover-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+        
+        .cover-subtitle {
+            font-size: 16px;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+        }
+        
+        .cover-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .cover-badge {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: white;
+            font-size: 13px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .cover-date {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+        
+        /* 内容区域 */
+        .content-section {
+            padding: 20px 16px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ff2442;
+            margin: 28px 0 16px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 22px;
+            background: linear-gradient(180deg, #ff2442 0%, #ff6b6b 100%);
+            border-radius: 2px;
+        }
+        
+        /* 行程总览卡片 */
+        .overview-card {
+            background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+            border-radius: 16px;
+            padding: 16px;
+            margin: 12px 0;
+            box-shadow: 0 2px 12px rgba(255,36,66,0.1);
+            border: 1px solid #ffe0e0;
+        }
+        
+        .country-row {
+            display: flex;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px dashed #ffe0e0;
+        }
+        
+        .country-row:last-child {
+            border-bottom: none;
+        }
+        
+        .country-flag {
+            font-size: 36px;
+            margin-right: 12px;
+        }
+        
+        .country-info {
+            flex: 1;
+        }
+        
+        .country-name {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 4px;
+        }
+        
+        .country-detail {
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .country-days {
+            background: linear-gradient(135deg, #ff2442 0%, #ff6b6b 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        /* 日程卡片 */
+        .day-card {
+            background: white;
+            border-radius: 16px;
+            padding: 16px;
+            margin: 12px 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid #ff2442;
+        }
+        
+        .day-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .day-number {
+            background: linear-gradient(135deg, #ff2442 0%, #ff6b6b 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .day-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .day-content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .time-block {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .time-icon {
+            font-size: 18px;
+            margin-top: 2px;
+        }
+        
+        .time-text {
+            flex: 1;
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+        
+        .time-label {
+            font-weight: bold;
+            color: #ff2442;
+            margin-right: 4px;
+        }
+        
+        .food-recommend {
+            background: #fff9f0;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #666;
+            margin-top: 4px;
+        }
+        
+        .food-recommend::before {
+            content: '🍽️ ';
+        }
+        
+        .tips-box {
+            background: #fffbe6;
+            border-radius: 12px;
+            padding: 14px;
+            margin: 10px 0;
+            border: 1px solid #ffe58f;
+        }
+        
+        .tips-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #fa8c16;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .tip-item {
+            font-size: 13px;
+            color: #666;
+            margin: 6px 0;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.5;
+        }
+        
+        .tip-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #fa8c16;
+        }
+        
+        /* 预算卡片 */
+        .budget-card {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 12px 0;
+            color: white;
+        }
+        
+        .budget-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .budget-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 14px;
+            padding: 6px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .budget-total {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        /* 表格样式 */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 13px;
+        }
+        
+        .info-table th {
+            background: linear-gradient(135deg, #ff2442 0%, #ff6b6b 100%);
+            color: white;
+            padding: 10px 8px;
+            text-align: left;
+            font-size: 13px;
+        }
+        
+        .info-table td {
+            padding: 10px 8px;
+            border-bottom: 1px solid #ffe0e0;
+            color: #444;
+        }
+        
+        .info-table tr:nth-child(even) {
+            background: #fff5f5;
+        }
+        
+        /* 美食网格 */
+        .food-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 12px 0;
+        }
+        
+        .food-item {
+            background: white;
+            border-radius: 12px;
+            padding: 14px 10px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .food-emoji {
+            font-size: 32px;
+            margin-bottom: 6px;
+        }
+        
+        .food-name {
+            font-size: 13px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .food-location {
+            font-size: 11px;
+            color: #999;
+            margin-top: 4px;
+        }
+        
+        /* App卡片 */
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 12px 0;
+        }
+        
+        .app-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 14px;
+            color: white;
+            text-align: center;
+        }
+        
+        .app-name {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        
+        .app-desc {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+        
+        /* Checklist */
+        .checklist {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 12px 0;
+        }
+        
+        .checklist-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+            color: #444;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ff2442;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* 标签 */
+        .tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff2442 0%, #ff6b6b 100%);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            margin: 3px 3px 3px 0;
+        }
+        
+        /* 图片样式 */
+        .full-width-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            margin: 12px 0;
+            border-radius: 12px;
+        }
+        
+        /* 作者信息 */
+        .author-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: #fafafa;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #ff2442 0%, #ff8e53 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .author-name {
+            font-weight: bold;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .author-desc {
+            font-size: 12px;
+            color: #999;
+            margin-top: 2px;
+        }
+        
+        /* 底部提示 */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 24px 16px;
+            text-align: center;
+        }
+        
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        .footer-emoji {
+            font-size: 40px;
+            margin-bottom: 12px;
+        }
+        
+        /* 机场信息卡片 */
+        .flight-card {
+            background: white;
+            border-radius: 12px;
+            padding: 14px;
+            margin: 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .flight-route {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .flight-city {
+            font-size: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .flight-arrow {
+            color: #ff2442;
+            font-size: 18px;
+        }
+        
+        .flight-info {
+            display: flex;
+            justify-content: space-around;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .flight-info span {
+            text-align: center;
+        }
+        
+        /* 高亮文本 */
+        .highlight {
+            background: linear-gradient(120deg, #ffe0e0 0%, #fff5f5 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: #ff2442;
+        }
+        
+        /* 推荐标签 */
+        .recommend-tag {
+            background: #52c41a;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            margin-left: 8px;
+        }
+        
+        /* 链接样式 */
+        .link-box {
+            background: #f0f5ff;
+            border-radius: 8px;
+            padding: 10px 14px;
+            margin: 8px 0;
+            font-size: 13px;
+            color: #1890ff;
+        }
+        
+        /* 国家分隔线 */
+        .country-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        
+        .divider-line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #ff2442, transparent);
+        }
+        
+        .divider-text {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 封面 -->
+        <div class="cover-section">
+            <div class="cover-bg">
+                <div class="cover-flags">🌏</div>
+                <div class="cover-title">新马泰9日游<br>完全攻略</div>
+                <div class="cover-subtitle">三国联游 · 2026国庆版 · 北京出发</div>
+                <div class="cover-badges">
+                    <span class="cover-badge">🇸🇬 新加坡 3晚</span>
+                    <span class="cover-badge">🇲🇾 马来西亚 3晚</span>
+                    <span class="cover-badge">🇹🇭 泰国 2晚</span>
+                </div>
+            </div>
+            <div class="cover-date">9.26 - 10.4 · 共9天8晚</div>
+        </div>
+        
+        <!-- 作者信息 -->
+        <div class="author-info">
+            <div class="avatar">✈️</div>
+            <div>
+                <div class="author-name">旅行攻略小助手</div>
+                <div class="author-desc">国庆出行规划 · 完整版攻略</div>
+            </div>
+        </div>
+        
+        <!-- 行程总览 -->
+        <div class="content-section">
+            <div class="section-title">📅 行程总览</div>
+            
+            <div class="overview-card">
+                <div class="country-row">
+                    <span class="country-flag">🇸🇬</span>
+                    <div class="country-info">
+                        <div class="country-name">新加坡 Singapore</div>
+                        <div class="country-detail">9.26-9.28 · 乌节路/克拉码头住宿</div>
+                    </div>
+                    <span class="country-days">3晚</span>
+                </div>
+                
+                <div class="country-row">
+                    <span class="country-flag">🇲🇾</span>
+                    <div class="country-info">
+                        <div class="country-name">马来西亚 Malaysia</div>
+                        <div class="country-detail">9.29-10.1 · 吉隆坡市区住宿</div>
+                    </div>
+                    <span class="country-days">3晚</span>
+                </div>
+                
+                <div class="country-row">
+                    <span class="country-flag">🇹🇭</span>
+                    <div class="country-info">
+                        <div class="country-name">泰国 Thailand</div>
+                        <div class="country-detail">10.2-10.4 · 考山路/暹罗住宿</div>
+                    </div>
+                    <span class="country-days">2晚</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 航班信息 -->
+        <div class="content-section">
+            <div class="section-title">✈️ 航班安排</div>
+            
+            <div class="flight-card">
+                <div class="flight-route">
+                    <span class="flight-city">北京 PEK</span>
+                    <span class="flight-arrow">→</span>
+                    <span class="flight-city">新加坡 SIN</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                    <span class="highlight">推荐</span> 国航CA969 15:00-21:30 直飞6h
+                </div>
+                <div class="flight-info">
+                    <span>🛫 PEK 15:00</span>
+                    <span>6h</span>
+                    <span>🛬 SIN 21:30</span>
+                </div>
+            </div>
+            
+            <div class="flight-card">
+                <div class="flight-route">
+                    <span class="flight-city">吉隆坡 KUL</span>
+                    <span class="flight-arrow">→</span>
+                    <span class="flight-city">曼谷 BKK</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                    <span class="highlight">推荐</span> 亚航AK 约¥150-300 1.5h
+                </div>
+                <div class="flight-info">
+                    <span>🛫 KUL</span>
+                    <span>1.5h</span>
+                    <span>🛬 BKK</span>
+                </div>
+            </div>
+            
+            <div class="flight-card">
+                <div class="flight-route">
+                    <span class="flight-city">曼谷 BKK</span>
+                    <span class="flight-arrow">→</span>
+                    <span class="flight-city">北京 PEK</span>
+                </div>
+                <div style="font-size: 13px; color: #666; margin-bottom: 10px;">
+                    <span class="highlight">推荐</span> 国航CA980 01:30-07:30 凌晨航班
+                </div>
+                <div class="flight-info">
+                    <span>🛫 BKK 01:30</span>
+                    <span>6h</span>
+                    <span>🛬 PEK 07:30</span>
+                </div>
+            </div>
+            
+            <div class="tips-box">
+                <div class="tips-title">💡 航班小贴士</div>
+                <div class="tip-item">选晚班机到新加坡，可以先逛樟宜机场（世界最美机场！）</div>
+                <div class="tip-item">9.26下班直接去机场，21:30到新加坡</div>
+                <div class="tip-item">10.4白天还能玩一整天，晚上吃完饭去机场</div>
+            </div>
+        </div>
+        
+        <!-- 新加坡行程 -->
+        <div class="content-section">
+            <div class="country-divider">
+                <div class="divider-line"></div>
+                <span class="divider-text">🇸🇬 新加坡</span>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 1</span>
+                    <span class="day-title">9.26 · 抵达新加坡</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午/下午：</span>北京 ✈️ 新加坡</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌙</span>
+                        <span class="time-text"><span class="time-label">晚上：</span>抵达樟宜机场，逛机场（世界最美机场！有瀑布、森林、购物）</span>
+                    </div>
+                    <div class="food-recommend">
+                        住宿推荐：乌节路或克拉码头附近
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 2</span>
+                    <span class="day-title">9.27 · 滨海湾+市区</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>鱼尾狮公园(1h) → 滨海艺术中心(30min)</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>滨海湾花园(2-3h) · 云雾林¥120 · 超级树灯光秀19:45</span>
+                    </div>
+                    <div class="food-recommend">
+                        午餐：松发肉骨茶(克拉码头) ¥50 · 晚餐：沙爹湾(滨海湾花园内) ¥60
+                    </div>
+                    <div class="tips-box" style="margin-top: 10px;">
+                        <div class="tips-title">📍 动线建议</div>
+                        <div class="tip-item">鱼尾狮→滨海艺术中心→滨海湾花园，三者步行可达</div>
+                        <div class="tip-item">下午逛花园，晚上看超级树灯光秀超美！</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 3</span>
+                    <span class="day-title">9.28 · 圣淘沙岛</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>圣淘沙岛 · 环球影城(3-4h) ¥220-280，建议买快速通行证</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>S.E.A海洋馆(2h) ¥180 或 西罗索海滩看日落</span>
+                    </div>
+                    <div class="food-recommend">
+                        午餐：马来西亚美食街(环球影城旁) ¥50 · 晚餐：珍宝海鲜(克拉码头) ¥200 🦀
+                    </div>
+                    <div class="tips-box" style="margin-top: 10px;">
+                        <div class="tips-title">📍 动线建议</div>
+                        <div class="tip-item">环球影城9点开门就进，需要一整天</div>
+                        <div class="tip-item">克拉码头吃海鲜+看夜景，辣椒螃蟹必点！</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 4</span>
+                    <span class="day-title">9.29 · 文化探索 → 前往吉隆坡</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>小印度(1h) → 甘榜格南+苏丹回教堂(1h) · 免费</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>牛车水(1-2h) · 新加坡唐人街</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌙</span>
+                        <span class="time-text"><span class="time-label">晚上5点：</span>乘大巴前往吉隆坡（约6-8h过夜巴士）</span>
+                    </div>
+                    <div class="tips-box" style="margin-top: 10px;">
+                        <div class="tips-title">💡 交通建议</div>
+                        <div class="tip-item">推荐Aeroline豪华大巴 ¥150，有wifi+餐食</div>
+                        <div class="tip-item">过夜巴士省时间又省住宿费</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 马来西亚行程 -->
+        <div class="content-section">
+            <div class="country-divider">
+                <div class="divider-line"></div>
+                <span class="divider-text">🇲🇾 马来西亚</span>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 5</span>
+                    <span class="day-title">9.30 · 吉隆坡经典打卡</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>国家清真寺(1h) → 独立广场(30min) → 苏丹阿都沙末大厦(30min)</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>双子塔KLCC(2h) · <span class="highlight">必须提前订票！</span> ¥120</span>
+                    </div>
+                    <div class="food-recommend">
+                        午餐：何记海南鸡饭(茨厂街) ¥30 · 晚餐：黄亚华烧鸡翅(阿罗街) ¥50
+                    </div>
+                    <div class="tips-box" style="margin-top: 10px;">
+                        <div class="tips-title">⚠️ 重要提醒</div>
+                        <div class="tip-item">双子塔观景台必须提前订票！当天可能没票</div>
+                        <div class="tip-item">国家清真寺女生需穿长袍，有免费借用的</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 6</span>
+                    <span class="day-title">10.1 · 黑风洞</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>黑风洞(2-3h) · 爬272级台阶 · <span class="highlight">穿舒适鞋！</span></span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>国家博物馆(1.5h) → 茨厂街(2h)</span>
+                    </div>
+                    <div class="food-recommend">
+                        午餐：奶奶家娘惹菜(黑风洞附近) ¥40
+                    </div>
+                    <div class="tips-box" style="margin-top: 10px;">
+                        <div class="tips-title">⚠️ 黑风洞注意</div>
+                        <div class="tip-item">猴子很多！不要拿食物</div>
+                        <div class="tip-item">穿舒适鞋，272级台阶</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 7</span>
+                    <span class="day-title">10.2 · 飞往曼谷</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>吉隆坡自由活动/购物</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>飞往曼谷(约2h) · KLIA2亚航专用机场</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌙</span>
+                        <span class="time-text"><span class="time-label">晚上：</span>抵达曼谷，逛考山路夜市</span>
+                    </div>
+                    <div class="food-recommend">
+                        晚餐：考山路夜市 · 泰式炒粉、烤肉串、芒果糯米饭 ¥30
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 泰国行程 -->
+        <div class="content-section">
+            <div class="country-divider">
+                <div class="divider-line"></div>
+                <span class="divider-text">🇹🇭 泰国</span>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 8</span>
+                    <span class="day-title">10.3 · 大皇宫+寺庙</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>大皇宫(2h) ¥500套票 → 玉佛寺(30min) → 卧佛寺(1h) ¥200</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>郑王庙(1.5h) ¥100 · 坐船过去，看日落超美</span>
+                    </div>
+                    <div class="food-recommend">
+                        午餐：Thip Samai(卧佛寺旁) · 米其林推荐泰式炒粉 ¥60
+                    </div>
+                    <div class="tips-box" style="margin-top: 10px;">
+                        <div class="tips-title">⚠️ 重要提醒</div>
+                        <div class="tip-item"><span class="highlight">大皇宫必须穿长裤长裙！</span>门口有人卖围巾</div>
+                        <div class="tip-item">郑王庙台阶很陡，穿鲜艳衣服拍照好看</div>
+                        <div class="tip-item">早上先逛大皇宫，人少</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-card">
+                <div class="day-header">
+                    <span class="day-number">DAY 9</span>
+                    <span class="day-title">10.4 · 市场+购物 → 回国</span>
+                </div>
+                <div class="day-content">
+                    <div class="time-block">
+                        <span class="time-icon">🌅</span>
+                        <span class="time-text"><span class="time-label">上午：</span>丹嫩沙多水上市场(3h) · 距市区1.5h，需早起！</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌤️</span>
+                        <span class="time-text"><span class="time-label">下午：</span>暹罗广场购物 · Let's Relax泰式按摩 ¥150/h</span>
+                    </div>
+                    <div class="time-block">
+                        <span class="time-icon">🌙</span>
+                        <span class="time-text"><span class="time-label">晚上：</span>考山路最后一顿 · 冬阴功汤必点！</span>
+                    </div>
+                    <div class="tips-box" style="margin-top: 10px;">
+                        <div class="tips-title">💡 小贴士</div>
+                        <div class="tip-item">水上市场早上6-9点最热闹，可以砍价，带现金</div>
+                        <div class="tip-item">选晚上22:00-01:00航班，白天还能玩一整天</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 美食推荐 -->
+        <div class="content-section">
+            <div class="section-title">🍜 美食地图</div>
+            
+            <div class="country-divider">
+                <div class="divider-line" style="background: linear-gradient(90deg, transparent, #ff6b6b, transparent);"></div>
+                <span class="divider-text" style="font-size: 14px;">🇸🇬 新加坡</span>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-emoji">🦀</div>
+                    <div class="food-name">辣椒螃蟹</div>
+                    <div class="food-location">珍宝海鲜 · 克拉码头</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🍲</div>
+                    <div class="food-name">肉骨茶</div>
+                    <div class="food-location">松发肉骨茶 · 克拉码头</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🍢</div>
+                    <div class="food-name">沙爹海鲜</div>
+                    <div class="food-location">沙爹湾 · 滨海湾花园</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🍜</div>
+                    <div class="food-name">油鸡面</div>
+                    <div class="food-location">了凡油鸡面 · 小印度</div>
+                </div>
+            </div>
+            
+            <div class="country-divider">
+                <div class="divider-line" style="background: linear-gradient(90deg, transparent, #667eea, transparent);"></div>
+                <span class="divider-text" style="font-size: 14px;">🇲🇾 马来西亚</span>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-emoji">🍗</div>
+                    <div class="food-name">烧鸡翅</div>
+                    <div class="food-location">黄亚华 · 阿罗街</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🍚</div>
+                    <div class="food-name">海南鸡饭</div>
+                    <div class="food-location">何记 · 茨厂街</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🥘</div>
+                    <div class="food-name">娘惹菜</div>
+                    <div class="food-location">奶奶家 · 黑风洞附近</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🍲</div>
+                    <div class="food-name">肉骨茶</div>
+                    <div class="food-location">新峰肉骨茶 · 武吉免登</div>
+                </div>
+            </div>
+            
+            <div class="country-divider">
+                <div class="divider-line" style="background: linear-gradient(90deg, transparent, #764ba2, transparent);"></div>
+                <span class="divider-text" style="font-size: 14px;">🇹🇭 泰国</span>
+                <div class="divider-line"></div>
+            </div>
+            
+            <div class="food-grid">
+                <div class="food-item">
+                    <div class="food-emoji">🍜</div>
+                    <div class="food-name">泰式炒粉</div>
+                    <div class="food-location">Thip Samai · 米其林推荐</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🥘</div>
+                    <div class="food-name">冬阴功汤</div>
+                    <div class="food-location">Tom Yum Kung · 考山路</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🥭</div>
+                    <div class="food-name">芒果糯米饭</div>
+                    <div class="food-location">建兴酒家 · 暹罗区</div>
+                </div>
+                <div class="food-item">
+                    <div class="food-emoji">🍞</div>
+                    <div class="food-name">吐司冰淇淋</div>
+                    <div class="food-location">After You · 暹罗广场</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 预算清单 -->
+        <div class="content-section">
+            <div class="section-title">💰 预算清单（9天/人）</div>
+            
+            <div class="budget-card">
+                <div class="budget-title">🧾 费用明细</div>
+                <div class="budget-item">
+                    <span>✈️ 北京→新加坡</span>
+                    <span>¥1,500-3,000</span>
+                </div>
+                <div class="budget-item">
+                    <span>✈️ 吉隆坡→曼谷</span>
+                    <span>¥200-500</span>
+                </div>
+                <div class="budget-item">
+                    <span>✈️ 曼谷→北京</span>
+                    <span>¥1,500-3,000</span>
+                </div>
+                <div class="budget-item">
+                    <span>🚌 新加坡→吉隆坡大巴</span>
+                    <span>¥100-200</span>
+                </div>
+                <div class="budget-item">
+                    <span>🏨 住宿（8晚）</span>
+                    <span>¥1,500-3,000</span>
+                </div>
+                <div class="budget-item">
+                    <span>🎫 门票+活动</span>
+                    <span>¥1,500-2,000</span>
+                </div>
+                <div class="budget-item">
+                    <span>🍽️ 餐饮</span>
+                    <span>¥1,500-2,500</span>
+                </div>
+                <div class="budget-item">
+                    <span>🛍️ 购物+其他</span>
+                    <span>¥1,500-3,000</span>
+                </div>
+                <div class="budget-total">💰 总计：¥8,000-16,000/人</div>
+            </div>
+        </div>
+        
+        <!-- 实用App -->
+        <div class="content-section">
+            <div class="section-title">📱 必备App</div>
+            
+            <div class="app-grid">
+                <div class="app-item">
+                    <div class="app-name">🗺️ Google Maps</div>
+                    <div class="app-desc">导航必备</div>
+                </div>
+                <div class="app-item">
+                    <div class="app-name">🚗 Grab</div>
+                    <div class="app-desc">东南亚滴滴</div>
+                </div>
+                <div class="app-item">
+                    <div class="app-name">🎫 Klook</div>
+                    <div class="app-desc">订票活动</div>
+                </div>
+                <div class="app-item">
+                    <div class="app-name">🍽️ TripAdvisor</div>
+                    <div class="app-desc">找餐厅</div>
+                </div>
+            </div>
+            
+            <div class="tips-box">
+                <div class="tips-title">📶 流量解决方案</div>
+                <div class="tip-item"><span class="highlight">推荐</span>：淘宝买「东南亚三国通用」电话卡 ¥50-80</div>
+                <div class="tip-item">AIS 8天卡：¥50-80，15GB流量</div>
+                <div class="tip-item">机场都有电话卡售卖点，下飞机直接买</div>
+            </div>
+        </div>
+        
+        <!-- 注意事项 -->
+        <div class="content-section">
+            <div class="section-title">⚠️ 注意事项汇总</div>
+            
+            <div class="tips-box">
+                <div class="tips-title">🇸🇬 新加坡</div>
+                <div class="tip-item">苏丹回教堂不能穿短裤短裙，有免费长袍借</div>
+                <div class="tip-item">滨海湾云雾林很冷，记得带外套</div>
+                <div class="tip-item">环球影城提前买票，快速通行证值得买</div>
+            </div>
+            
+            <div class="tips-box" style="border-color: #91d5ff; background: #e6f7ff;">
+                <div class="tips-title" style="color: #1890ff;">🇲🇾 马来西亚</div>
+                <div class="tip-item">双子塔必须提前订票！当天可能没票</div>
+                <div class="tip-item">黑风洞猴子很多，不要拿食物</div>
+                <div class="tip-item">茨厂街可以讲价，注意假货</div>
+            </div>
+            
+            <div class="tips-box" style="border-color: #b37不出; background: #f9f0ff;">
+                <div class="tips-title" style="color: #722ed1;">🇹🇭 泰国</div>
+                <div class="tip-item"><span class="highlight">大皇宫必须穿长裤长裙！</span></div>
+                <div class="tip-item">水上市场早上6-9点最好，带现金</div>
+                <div class="tip-item">考山路价格虚高记得砍价</div>
+            </div>
+        </div>
+        
+        <!-- Checklist -->
+        <div class="content-section">
+            <div class="section-title">✅ 出发前Checklist</div>
+            
+            <div class="checklist">
+                <div class="checklist-title">📄 证件</div>
+                <div class="checklist-item"><div class="checkbox"></div>护照（有效期6个月以上）</div>
+                <div class="checklist-item"><div class="checkbox"></div>机票行程单（打印）</div>
+                <div class="checklist-item"><div class="checkbox"></div>酒店预订确认单（打印）</div>
+            </div>
+            
+            <div class="checklist">
+                <div class="checklist-title">🧳 行李</div>
+                <div class="checklist-item"><div class="checkbox"></div>换洗衣物（东南亚潮湿，多带几套）</div>
+                <div class="checklist-item"><div class="checkbox"></div>防晒霜SPF50+</div>
+                <div class="checklist-item"><div class="checkbox"></div>舒适的步行鞋</div>
+                <div class="checklist-item"><div class="checkbox"></div>长裤/长裙（进寺庙用）</div>
+                <div class="checklist-item"><div class="checkbox"></div>常用药品（肠胃药、感冒药）</div>
+            </div>
+            
+            <div class="checklist">
+                <div class="checklist-title">🔌 电子设备</div>
+                <div class="checklist-item"><div class="checkbox"></div>东南亚电话卡（淘宝提前买）</div>
+                <div class="checklist-item"><div class="checkbox"></div>充电宝（20000mAh以内）</div>
+                <div class="checklist-item"><div class="checkbox"></div>转换插头（新马是英标，泰是两孔）</div>
+            </div>
+            
+            <div class="checklist">
+                <div class="checklist-title">💳 金融</div>
+                <div class="checklist-item"><div class="checkbox"></div>现金（新元、马币、泰铢）</div>
+                <div class="checklist-item"><div class="checkbox"></div>银行卡（支持Visa/Mastercard）</div>
+            </div>
+            
+            <div class="tips-box" style="background: #fff1f0; border-color: #ffccc7;">
+                <div class="tips-title" style="color: #ff4d4f;">🔔 提前预订</div>
+                <div class="tip-item">北京→新加坡机票（提前2个月！）</div>
+                <div class="tip-item">吉隆坡→曼谷机票</div>
+                <div class="tip-item">新加坡环球影城门票</div>
+                <div class="tip-item">双子塔观景台门票 <span class="highlight">必须提前订！</span></div>
+                <div class="tip-item">住宿（提前订更便宜）</div>
+            </div>
+        </div>
+        
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="footer-emoji">🌴✈️🦀</div>
+            <div class="footer-text">
+                祝你旅途愉快！<br>
+                新加坡 · 马来西亚 · 泰国<br>
+                9天8晚 · 完整攻略
+            </div>
+            <div style="margin-top: 20px;">
+                <span class="tag" style="background: rgba(255,255,255,0.2);">#国庆旅游</span>
+                <span class="tag" style="background: rgba(255,255,255,0.2);">#新马泰</span>
+                <span class="tag" style="background: rgba(255,255,255,0.2);">#出境游</span>
+                <span class="tag" style="background: rgba(255,255,255,0.2);">#旅行攻略</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
